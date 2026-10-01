@@ -1,22 +1,19 @@
 import {
-  getIntroduction,
-  getHomeSliders,
-  getHomeMilestones
-} from '@/lib/home';
+  getIntroduction
+} from '@/lib/careers';
 
 import {
   getMetaData,
-  getBanner,
-  getClients
+  getBanner
 } from '@/lib/common';
 
-import HomePage from "@/components/pages/home";
+import AboutUsPage from "@/components/pages/careers";
 import { generateMetadata as createMetadata } from '@/components/utils/generateMetadata';
 
 export async function generateMetadata() {
   const [meta_data, banner] = await Promise.all([
-    getMetaData("Home"),
-    getBanner("Home"),
+    getMetaData("Careers"),
+    getBanner("Careers"),
   ]);
 
   return createMetadata({
@@ -27,23 +24,14 @@ export async function generateMetadata() {
 
 export default async function Page() {
   const [
-    introduction,
-    sliders,
-    milestones,
-    clients
+    introduction
   ] = await Promise.all([
-    getIntroduction(),
-    getHomeSliders(),
-    getHomeMilestones(),
-    getClients()
+    getIntroduction()
   ])
 
   return (
-    <HomePage
-    sliders={sliders}
+    <AboutUsPage
     introduction={introduction}
-    milestones={milestones}
-    clients={clients}
     />
   )
 }
