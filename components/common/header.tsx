@@ -63,7 +63,7 @@ export default function Header({page_name}: Props) {
     ]
 
     return (
-        <header className="fixed top-0 py-10 px-10 md:px-20 flex justify-between items-center w-full">
+        <header className="fixed top-0 py-5 px-10 md:px-20 flex justify-between items-center w-full z-5 bg-white">
             <Link className="w-50" href="/">
                 <Image src={`${basePath}/images/logo.jpg`} alt="a2z logo" width={322} height={112} className="object-cover w-full h-full" loading="eager" />
             </Link>
