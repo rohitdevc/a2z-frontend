@@ -24,7 +24,7 @@ export default function ContactUsPage() {
 
     return (
         <>
-        <Header />
+        <Header page_name="Home" />
         <main className="bg-white">
 
         </main>

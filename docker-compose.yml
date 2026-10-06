@@ -1,7 +1,7 @@
 name: a2z-frontend
 
 services:
-  ttp-web:
+  a2z-web:
     container_name: a2z-frontend
 
     build:

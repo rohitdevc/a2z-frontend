@@ -36,7 +36,7 @@ export default function AboutUsPage({
 
     return (
         <>
-        <Header />
+        <Header page_name="Home" />
         <main className="bg-white">
 
         </main>

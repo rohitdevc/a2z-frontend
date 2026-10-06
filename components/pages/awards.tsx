@@ -32,7 +32,7 @@ export default function AwardPage({
 
     return (
         <>
-        <Header />
+        <Header page_name="Home" />
         <main className="bg-white">
 
         </main>

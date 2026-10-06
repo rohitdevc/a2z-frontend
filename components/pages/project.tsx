@@ -32,7 +32,7 @@ export default function ProjectsPages({
 
     return (
         <>
-        <Header />
+        <Header page_name="Home" />
         <main className="bg-white">
 
         </main>

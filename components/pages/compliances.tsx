@@ -34,7 +34,7 @@ export default function CompliancesPage({
 
     return (
         <>
-        <Header />
+        <Header page_name="Home" />
         <main className="bg-white">
 
         </main>
