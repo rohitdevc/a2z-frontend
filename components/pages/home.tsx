@@ -132,6 +132,34 @@ export default function HomePage({
                     </section>
                 )
             }
+            {
+                clients && clients.length > 0 && (
+                    <section className="px-20 py-30 flex flex-col w-full gap-10 bg-repeat" style={{backgroundImage: `url(${basePath}/images/dots.png)`}}>
+                        <div className="flex justify-between items-center w-full">
+                            <h2 className="text-black font-semibold text-4xl tracking-[1px]">Our clients</h2>
+                            <div className="flex gap-2">
+                                <button className="clients.prev cursor-pointer" aria-label="Previous Slide">
+                                    <IoIosArrowBack size={40} />
+                                </button>
+                                <button className="clients_next cursor-pointer" aria-label="Next Slide">
+                                    <IoIosArrowForward size={40} />
+                                </button>
+                            </div>
+                        </div>
+                        <Swiper spaceBetween={0} slidesPerView={2} loop={true} breakpoints={{1280: {slidesPerView: 4, spaceBetween: 30, slidesPerGroup: 4}}} className="w-full" modules={[Navigation]} navigation={{nextEl: '.clients_next', prevEl: '.clients.prev'}}>
+                            {
+                                clients.map((client, key) => (
+                                    <SwiperSlide key={key} className="bg-[#fafafa] border border-[#e5e5e5]">
+                                        <div className="w-50 mx-auto">
+                                            <Image src={client.client_logo_url} alt={client.client_name} width={140} height={100} className="mx-auto w-30" />
+                                        </div>
+                                    </SwiperSlide>
+                                ))
+                            }
+                        </Swiper>
+                    </section>
+                )
+            }
         </main>
         <Footer />
         </>
