@@ -7,7 +7,8 @@ import {
 import {
   getMetaData,
   getBanner,
-  getClients
+  getClients,
+  getServices
 } from '@/lib/common';
 
 import HomePage from "@/components/pages/home";
@@ -30,12 +31,14 @@ export default async function Page() {
     introduction,
     sliders,
     milestones,
-    clients
+    clients,
+    services
   ] = await Promise.all([
     getIntroduction(),
     getHomeSliders(),
     getHomeMilestones(),
-    getClients()
+    getClients(),
+    getServices()
   ])
 
   return (
@@ -44,6 +47,7 @@ export default async function Page() {
     introduction={introduction}
     milestones={milestones}
     clients={clients}
+    services={services}
     />
   )
 }

@@ -13,8 +13,9 @@ import Header from "@/components/common/header";
 import Footer from "@/components/common/footer";
 
 import { HiArrowLongRight } from "react-icons/hi2";
+import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 
-import { HomeIntroProps, HomeSliderProps, HomeMilestoneProps, ClientProps } from "@/types/api"
+import { HomeIntroProps, HomeSliderProps, HomeMilestoneProps, ClientProps, ServicesProps } from "@/types/api"
 
 import { useEffect, useRef, useState } from "react";
 
@@ -31,6 +32,7 @@ type Props = {
     introduction: HomeIntroProps
     milestones: HomeMilestoneProps[]
     clients: ClientProps[]
+    services: ServicesProps[]
 }
 
 export default function HomePage({
@@ -38,6 +40,7 @@ export default function HomePage({
     introduction,
     milestones,
     clients,
+    services
 }: Props) {
     const basePath = process.env.NEXT_PUBLIC_PATH!.replace(/\/$/, "");
 
@@ -70,7 +73,7 @@ export default function HomePage({
                                 </SwiperSlide>
                             ))
                         }
-                        <div className="master-slider-pagination flex items-center gap-3 absolute !bottom-30 !right-70 z-5 cursor-pointer" />
+                        <div className="master-slider-pagination flex items-center gap-3 absolute !bottom-30 !right-70 !left-auto z-5 cursor-pointer" />
                         <div className="absolute top-5 right-10 z-2 text-black flex items-center gap-7">
                             <div className="border-5 w-35 h-35 border-[#FF6600] flex items-center">
                                 <span className="text-[8rem] font-semibold">{(new Date().getFullYear() - 2002)}</span>
@@ -93,6 +96,40 @@ export default function HomePage({
                         <div className="bg-repeat absolute -bottom-20 h-[50%] w-full" style={{backgroundImage: `url(${basePath}/images/dots.png)`}}></div>
                     </div>
                 </section>
+                )
+            }
+            {
+                services && services.length > 0 && (
+                    <section className="flex flex-col w-full gap-10">
+                        <div className="px-20 py-20 flex justify-between w-full">
+                            <h2 className="text-black font-semibold text-4xl tracking-[1px]">Our expertise includes</h2>
+                            <div className="flex gap-5 items-center">
+                                <Link href="/services" className="text-[#FF6600] italic tracking-[1px]">View all Services</Link>
+                                <div className="flex gap-2">
+                                    <button className="services.prev cursor-pointer" aria-label="Previous Slide">
+                                        <IoIosArrowBack size={40} />
+                                    </button>
+                                    <button className="services_next cursor-pointer" aria-label="Next Slide">
+                                        <IoIosArrowForward size={40} />
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <Swiper spaceBetween={0} slidesPerView={1} loop={true} breakpoints={{1280: {slidesPerView: 3, spaceBetween: 30}}} className="h-150 w-full text-white" modules={[Navigation]} navigation={{nextEl: '.services_next', prevEl: '.services.prev'}}>
+                            {
+                                services.map((service, key) => (
+                                    <SwiperSlide key={key} className="bg-no-repeat bg-cover h-150 group !cursor-pointer" style={{backgroundImage: `url(${service.service_thumbnail_url})`}} onClick={() => window.location.href=`/services/${service.service_url_slug}`}>
+                                        <div className="flex w-full h-full bg-gradient-to-t from-black/30 to-transparent transition-all duration-500 group-hover:bg-[#FF6600]/60">
+                                            <div className="mt-auto px-10 py-10 flex flex-col gap-5">
+                                                <h3 className="font-semibold text-3xl">{service.service_name}</h3>
+                                                <Link href={`/services/${service.service_url_slug}`} className="flex gap-3 items-center">View Service <IoIosArrowForward size={20} /></Link>
+                                            </div>
+                                        </div>
+                                    </SwiperSlide>
+                                ))
+                            }
+                        </Swiper>
+                    </section>
                 )
             }
         </main>
