@@ -6,7 +6,7 @@ export default function Footer() {
     const basePath = process.env.NEXT_PUBLIC_PATH!.replace(/\/$/, "");
 
     return (
-        <footer className="py-10 px-10 md:px-40 text-black flex flex-col gap-7">
+        <footer className="py-10 px-15 lg:px-40 text-black flex flex-col gap-7">
             <div className="flex flex-col md:flex-row justify-between gap-10 md:gap-0">
                 <ul className="flex flex-col gap-2 mx-auto md:mx-0 order-2 md:order-1 w-full md:w-[48%]">
                     <li>&copy; a2zonlineservices.com</li>

@@ -63,11 +63,11 @@ export default function Header({page_name}: Props) {
     ]
 
     return (
-        <header className="fixed top-0 py-5 px-10 md:px-20 flex justify-between items-center w-full z-5 bg-white">
+        <header className="fixed top-0 py-5 px-5 sm:px-15 lg:px-20 flex justify-between items-center w-full z-5 bg-white">
             <Link className="w-50" href="/">
                 <Image src={`${basePath}/images/logo.jpg`} alt="a2z logo" width={322} height={112} className="object-cover w-full h-full" loading="eager" />
             </Link>
-            <div className="flex flex-col md:flex-row justify-between items-end md:items-center w-sm">
+            <div className="flex flex-col md:flex-row justify-between items-end md:items-center w-xs lg:w-90 xl:w-sm">
                 <h3 className="uppercase font-semibold tracking-wider text-xs sm:text-sm md:text-base">Contact Us: <Link href="tel:+912066473200" className="text-black transition-all duration-300 hover:text-[#FF6600]">+91 20 66473200</Link></h3>
                 <span className="bg-[#e0e0e0] h-15 w-[0.2px] hidden md:block"></span>
                 <IoIosMenu size={30} className="cursor-pointer text-black" onClick={() => openMenu()} />
