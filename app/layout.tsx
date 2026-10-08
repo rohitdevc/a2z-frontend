@@ -1,6 +1,6 @@
 import "./globals.css";
 import Script from "next/script";
-import { Poppins } from "next/font/google";
+import { Poppins, Playfair_Display } from "next/font/google";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -8,9 +8,14 @@ const poppins = Poppins({
   variable: "--font-poppins",
 });
 
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  variable: "--font-playfair",
+});
+
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className={`${poppins.variable} font-poppins`}>
+    <html lang="en" className={`${poppins.variable} ${playfair.variable} font-poppins font-playfair`}>
       <head>
         {/* Google Analytics */}
         <Script

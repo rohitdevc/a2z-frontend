@@ -160,6 +160,32 @@ export default function HomePage({
                     </section>
                 )
             }
+            {
+                milestones && milestones.length > 0 && (
+                    <section className="px-20 py-30 flex flex-col gap-7 w-full">
+                        <h2 className="text-black font-semibold text-4xl tracking-[1px]">Experience</h2>
+                        <p>We are a team of talented domain experts who understand the special needs of each client and each project.</p>
+                        <div className="flex flex-wrap gap-50">
+                            {
+                                milestones.map((milestone, key) => (
+                                    <div className="flex flex-col gap-5" key={key}>
+                                        <div className="w-[100px] h-[100px] rounded-full p-2 border-2 border-black bg-white">
+                                            <Image src={milestone.milestone_icon_url} alt={milestone.milestone_caption} width={81} height={81} className="object-cover w-full h-full" />
+                                        </div>
+                                        <h3 className="text-lg flex gap-3">
+                                            {milestone.milestone_caption.match(/^\d+/)?.[0] && (
+                                                <span className="text-[#FF6600] text-5xl font-playfair font-bold leading-[0.8]">{milestone.milestone_caption.match(/^\d+/)?.[0]}</span>
+                                            )}
+                                            <span className="mt-3">{milestone.milestone_caption.replace(/^\d+\s*/, "")}</span>
+                                        </h3>
+                                        <h4 className="text-black font-semibold text-2xl tracking-[1px]">{milestone.milestone_achievement}</h4>
+                                    </div>
+                                ))
+                            }
+                        </div>
+                    </section>
+                )
+            }
         </main>
         <Footer />
         </>
