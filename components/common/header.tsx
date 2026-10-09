@@ -67,14 +67,14 @@ export default function Header({page_name}: Props) {
             <Link className="w-50" href="/">
                 <Image src={`${basePath}/images/logo.jpg`} alt="a2z logo" width={322} height={112} className="object-cover w-full h-full" loading="eager" />
             </Link>
-            <div className="flex flex-col md:flex-row justify-between items-end md:items-center w-xs lg:w-90 xl:w-sm">
+            <div className="flex flex-col md:flex-row justify-between items-end md:items-center w-sm lg:w-90 xl:w-sm">
                 <h3 className="uppercase font-semibold tracking-wider text-xs sm:text-sm md:text-base">Contact Us: <Link href="tel:+912066473200" className="text-black transition-all duration-300 hover:text-[#FF6600]">+91 20 66473200</Link></h3>
                 <span className="bg-[#e0e0e0] h-15 w-[0.2px] hidden md:block"></span>
                 <IoIosMenu size={30} className="cursor-pointer text-black" onClick={() => openMenu()} />
             </div>
-            <div className={`fixed top-0 right-0 w-lg h-screen bg-white px-20 shadow-[0_0_65px_black]/[7%] transition-all duration-500 origin-right ${menuState ? 'scale-x-100' : 'scale-x-0'}`}>
+            <div className={`fixed top-0 right-0 max-w-screen w-lg h-screen bg-white px-10 lg:px-20 shadow-[0_0_65px_black]/[7%] transition-all duration-500 origin-right ${menuState ? 'scale-x-100' : 'scale-x-0'}`}>
                 <TfiClose size={30} className="absolute right-5 md:right-20 top-5 md:top-15 cursor-pointer" onClick={() => closeMenu()} />
-                <nav className="mt-10 md:mt-50 h-screen md:h-[calc(100vh-12rem)] overflow-y-auto scrollbar-thick scrollbar-thumb-[#ff6600] scrollbar-track-transparent">
+                <nav className="mt-10 sm:mt-20 md:mt-40 h-[calc(100%-5rem)] md:h-[calc(100%-10rem)] min-h-0 overflow-y-auto overscroll-contain">
                     <ul className="flex flex-col gap-6 text-[2.5rem] font-semibold tracking-normal py-5 text-[#999999]">
                         {
                             nav_options.map((nav_option, key) => (

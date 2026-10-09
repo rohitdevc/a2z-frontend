@@ -25,7 +25,7 @@ export default function ContactUsPage() {
     return (
         <>
         <Header page_name="Home" />
-        <main className="bg-white">
+        <main className="bg-white px-5 sm:px-15 lg:px-20">
 
         </main>
         <Footer />
