@@ -78,7 +78,7 @@ export default function Header({page_name}: Props) {
                     <ul className="flex flex-col gap-6 text-[2.5rem] font-semibold tracking-normal py-5 text-[#999999]">
                         {
                             nav_options.map((nav_option, key) => (
-                                <li key={key} className={`transition-all duration-300 ${nav_option.nav_name === page_name ? 'text-black' : ''} hover:text-black`}>
+                                <li key={key} className={`transition-all duration-300 ${nav_option.nav_name === page_name ? 'text-black' : ''} hover:text-black`} onClick={() => closeMenu()}>
                                     <Link href={nav_option.nav_link}>{nav_option.nav_name}</Link>
                                 </li>
                             ))

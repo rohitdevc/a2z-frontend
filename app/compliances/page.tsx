@@ -11,11 +11,10 @@ import {
 import CompliancesPage from "@/components/pages/compliances";
 import { generateMetadata as createMetadata } from '@/components/utils/generateMetadata';
 
+const banner = await getBanner('Compliances');
+
 export async function generateMetadata() {
-  const [meta_data, banner] = await Promise.all([
-    getMetaData("Careers"),
-    getBanner("Careers"),
-  ]);
+  const meta_data = await getMetaData("Compliances")
 
   return createMetadata({
     meta_data,
@@ -34,6 +33,7 @@ export default async function Page() {
 
   return (
     <CompliancesPage
+    banner={banner}
     introduction={introduction}
     compliances={compliances}
     />

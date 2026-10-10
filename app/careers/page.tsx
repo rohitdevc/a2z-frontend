@@ -10,15 +10,14 @@ import {
 import AboutUsPage from "@/components/pages/careers";
 import { generateMetadata as createMetadata } from '@/components/utils/generateMetadata';
 
+const banner = await getBanner("Careers");
+
 export async function generateMetadata() {
-  const [meta_data, banner] = await Promise.all([
-    getMetaData("Careers"),
-    getBanner("Careers"),
-  ]);
+  const meta_data = await getMetaData("Careers");
 
   return createMetadata({
     meta_data,
-    banner,
+    banner
   });
 }
 
@@ -31,6 +30,7 @@ export default async function Page() {
 
   return (
     <AboutUsPage
+    banner={banner}
     introduction={introduction}
     />
   )

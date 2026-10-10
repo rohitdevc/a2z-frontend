@@ -71,7 +71,7 @@ export default function HomePage({
                                 </SwiperSlide>
                             ))
                         }
-                        <div className="master-slider-pagination flex items-center gap-3 absolute !bottom-20 lg:!bottom-25 xl:!bottom-30 !right-10 lg:!right-30 xl:!right-70 !left-auto sm:!left-auto md:!left-auto z-5 cursor-pointer" />
+                        <div className="master-slider-pagination flex items-center gap-3 absolute !bottom-20 lg:!bottom-25 xl:!bottom-30 !right-10 lg:!right-30 xl:!right-70 !left-auto sm:!left-auto md:!left-auto lg:!left-auto xl:!left-auto 2xl:!left-auto z-5 cursor-pointer" />
                         <div className="absolute top-5 right-5 md:right-10 z-2 text-black flex items-center gap-5 md:gap-7">
                             <div className="border-5 w-20 h-20 sm:w-25 sm:h-25 sm:w-30 sm:h-30 lg:w-35 lg:h-35 border-[#FF6600] flex items-center relative">
                                 <span className="text-6xl sm:text-7xl md:text-8xl lg:text-[7rem] xl:text-[8rem] font-semibold absolute -right-[20%]">{(new Date().getFullYear() - 2002)}</span>
@@ -116,7 +116,7 @@ export default function HomePage({
                         <Swiper spaceBetween={0} slidesPerView={1} loop={true} breakpoints={{768: {slidesPerView: 2, spaceBetween: 10}, 1280: {slidesPerView: 3, spaceBetween: 30}}} className="h-150 md:h-110 lg:h-150 w-full text-white" modules={[Navigation]} navigation={{nextEl: '.services_next', prevEl: '.services.prev'}}>
                             {
                                 services.map((service, key) => (
-                                    <SwiperSlide key={key} className="bg-no-repeat bg-cover h-auto group !cursor-pointer" style={{backgroundImage: `url(${service.service_thumbnail_url})`}} onClick={() => window.location.href=`/services/${service.service_url_slug}`}>
+                                    <SwiperSlide key={key} className="bg-no-repeat bg-center bg-cover h-auto group !cursor-pointer" style={{backgroundImage: `url(${service.service_thumbnail_url})`}} onClick={() => window.location.href=`/services/${service.service_url_slug}`}>
                                         <div className="flex w-full h-full bg-gradient-to-t from-black/30 to-transparent transition-all duration-500 group-hover:bg-[#FF6600]/60">
                                             <div className="mt-auto px-5 md:px-10 py-10 flex flex-col gap-5">
                                                 <h3 className="font-semibold text-3xl">{service.service_name}</h3>

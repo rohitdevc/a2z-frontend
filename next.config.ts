@@ -70,7 +70,7 @@ const nextConfig: NextConfig = {
 				source: "/news-and-events",
 				destination: "/about-us",
 				permanent: true,
-			},
+			}
 		];
 	},
 };

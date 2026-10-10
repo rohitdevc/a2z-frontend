@@ -11,7 +11,7 @@ import Footer from "@/components/common/footer";
 
 import { ClientProps, AboutIntroductionProps, AboutManagementProps } from "@/types/api"
 
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 
 import { IoIosArrowForward } from "react-icons/io";
 import { TfiClose } from "react-icons/tfi";
@@ -21,8 +21,6 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
-
-import Link from "next/link";
 
 import nl2br from "nl2br";
 import parser from 'html-react-parser';
@@ -91,7 +89,7 @@ export default function AboutUsPage({
         <main className="bg-white px-5 sm:px-15 lg:px-20">
             <section className="mt-20 sm:mt-25 md:mt-30 xl:px-20 py-20 lg:py-30 flex flex-col md:flex-row gap-10 md:gap-40 lg:gap-50">
                 <div className="md:w-[10%]">
-                    <div className="bg-[#FF6600] h-1.5 w-30"></div>
+                    <div className="bg-[#FF6600] h-[3px] w-30"></div>
                 </div>
                 <h1 className="w-full md:w-[80%] text-black text-4xl lg:text-6xl font-semibold leading-tight max-w-2xl">We make dreams a reality.</h1>
             </section>
@@ -99,7 +97,7 @@ export default function AboutUsPage({
                 introduction && (
                 <section className="xl:px-20 py-10 flex flex-col md:flex-row gap-10 md:gap-40 lg:gap-50">
                     <div className="md:w-[10%] flex flex-col gap-7 uppercase">
-                        <div className="bg-[#FF6600] h-1.5 w-30"></div>
+                        <div className="bg-[#FF6600] h-[3px] w-30"></div>
                         <h2 className="text-[#999999] font-semibold text-xl tracking-wide">About Us</h2>
                     </div>
                     <div className="w-full md:w-[80%] flex flex-col gap-5">
@@ -113,7 +111,7 @@ export default function AboutUsPage({
                 clients && clients.length > 0 && (
                     <section className="xl:px-20 py-10 lg:py-50 flex flex-col md:flex-row gap-10 md:gap-40 lg:gap-50 bg-repeat" style={{backgroundImage: `url(${basePath}/images/dots.png)`}}>
                         <div className="md:w-[10%] flex flex-col gap-7 uppercase">
-                            <div className="bg-[#FF6600] h-1.5 w-30"></div>
+                            <div className="bg-[#FF6600] h-[3px] w-30"></div>
                             <h2 className="text-[#999999] font-semibold text-xl tracking-wide">Our Clients</h2>
                         </div>
                         <div className="w-full md:w-[80%] flex flex-col gap-20">
@@ -143,7 +141,7 @@ export default function AboutUsPage({
                 managements && managements.length && (
                 <section className="xl:px-20 py-10 flex flex-col md:flex-row gap-10 md:gap-40 lg:gap-50">
                     <div className="md:w-[10%] flex flex-col gap-7 uppercase">
-                        <div className="bg-[#FF6600] h-1.5 w-30"></div>
+                        <div className="bg-[#FF6600] h-[3px] w-30"></div>
                         <h2 className="text-[#999999] font-semibold text-xl tracking-wide">Our Management</h2>
                     </div>
                     <div className="w-full md:w-[80%] grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-10">

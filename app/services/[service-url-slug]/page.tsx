@@ -1,4 +1,5 @@
 import { getService } from "@/lib/services";
+import { getServices } from "@/lib/common";
 import ServicePage from "@/components/pages/service";
 import { generateMetadata as createMetadata } from '@/components/utils/generateMetadata';
 import { notFound } from "next/navigation";
@@ -7,6 +8,16 @@ type PageProps = {
   params: Promise<{
     "service-url-slug": string
   }>
+}
+
+export const dynamicParams = false;
+
+export async function generateStaticParams() {
+  const services = await getServices();
+
+  return services.map((service) => ({
+    "service-url-slug": service.service_url_slug,
+  }));
 }
 
 export async function generateMetadata({ params }: PageProps) {
