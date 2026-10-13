@@ -2,22 +2,12 @@
 
 import Image from "next/image"
 
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-
 import Header from "@/components/common/header";
 import Footer from "@/components/common/footer";
 
 import { Banner, CompliancesIntroductionProps, CompliancesProps } from "@/types/api"
 
 import { FaFilePdf } from "react-icons/fa";
-
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useGSAP } from "@gsap/react";
-
-gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 import Link from "next/link";
 

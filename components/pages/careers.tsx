@@ -2,20 +2,10 @@
 
 import Image from "next/image"
 
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-
 import Header from "@/components/common/header";
 import Footer from "@/components/common/footer";
 
 import { Banner, CareerIntroductionProps } from "@/types/api"
-
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useGSAP } from "@gsap/react";
-
-gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 type Props = {
     banner: Banner

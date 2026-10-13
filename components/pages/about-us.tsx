@@ -16,12 +16,6 @@ import { useState } from "react";
 import { IoIosArrowForward } from "react-icons/io";
 import { TfiClose } from "react-icons/tfi";
 
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useGSAP } from "@gsap/react";
-
-gsap.registerPlugin(ScrollTrigger, useGSAP);
-
 import nl2br from "nl2br";
 import parser from 'html-react-parser';
 
