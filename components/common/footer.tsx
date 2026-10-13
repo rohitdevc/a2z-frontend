@@ -57,9 +57,9 @@ export default function Footer() {
         </footer>
         {
             !accepted && (
-            <section className={`fixed bottom-10 right-10 w-sm z-10`}>
-                <div className="relative px-10 py-10 bg-white text-center flex flex-col gap-5 items-center shadow-xl border border-[#f2f2f2]">
-                    <p className="leading-8">Our website uses cookies to ensure you get the best experience while you're here.</p>
+            <section className={`fixed bottom-10 right-1/2 translate-x-1/2 md:right-10 w-xs md:w-sm z-10`}>
+                <div className="relative p-5 md:p-10 bg-white text-center flex flex-col gap-5 items-center shadow-xl border border-[#f2f2f2]">
+                    <p className="leading-5 md:leading-8 text-sm md:text-base">Our website uses cookies to ensure you get the best experience while you're here.</p>
                     <button className="bg-[#FF6600] text-white hover:bg-black w-fit transition-all duration-300 px-5 py-2 cursor-pointer" onClick={handleAccept}>Accept</button>
                 </div>
             </section>

@@ -5,7 +5,7 @@ const isNetlifyDomain = process.env.URL?.includes("netlify.app");
 const nextConfig: NextConfig = {
 	output: 'standalone',
 
-	allowedDevOrigins: ['192.168.0.193'],
+	allowedDevOrigins: ['192.168.0.196'],
 	
 	turbopack: {
 		root: __dirname,

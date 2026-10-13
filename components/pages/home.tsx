@@ -68,6 +68,8 @@ export default function HomePage({
     };
 
     const sliderAnimateEntrance = useCallback((swiper: SwiperType) => {
+        if (!swiper || !swiper.slides) return;
+        
         const slide = swiper.slides[swiper.activeIndex];
 
         if (!slide) return;
@@ -94,7 +96,7 @@ export default function HomePage({
 
                 timerRef.current = setTimeout(() => {
                     slideAnimateToRef.current();
-                }, 5000);
+                }, 30000);
             },
         });
 
@@ -104,6 +106,7 @@ export default function HomePage({
             const length = (border as SVGRectElement).getTotalLength();
 
             gsap.set(border, {
+                visibility: "visible",
                 strokeDasharray: length,
                 strokeDashoffset: length,
             });
@@ -169,7 +172,7 @@ export default function HomePage({
                     swiper.slideToLoop(targetIndex, 1000);
                 }
             },
-        }).to([border, caption, description, link],
+        }).to([caption, description, link],
             {
                 y: 35,
                 opacity: 0,
@@ -179,6 +182,10 @@ export default function HomePage({
             },
             0
         );
+
+        gsap.set(border, {
+            visibility: "hidden",
+        });
     }, []);
 
     useEffect(() => {
@@ -244,7 +251,8 @@ export default function HomePage({
                         animatingRef.current = false;
                         sliderAnimateEntrance(swiper);
                     }}
-                    allowTouchMove={false}
+                    simulateTouch={true}
+                    touchStartPreventDefault={false}
                     className="relative mt-20 sm:mt-25 md:mt-30 h-[80vh]">
                         {
                             sliders.map((slider, key) => (
@@ -252,7 +260,7 @@ export default function HomePage({
                                     <div className="absolute inset-0 top-0 left-0 bg-black/30 z-1"></div>
                                     <div className="absolute z-2 top-30 md:top-35 lg:top-20 left-[10%] md:left-[25%] lg:left-1/4 w-45 h-90 flex flex-col text-white relative px-5 md:px-7 py-10 font-semibold text-xs">
                                         <svg className="absolute inset-0 w-full h-full pointer-events-none overflow-visible" viewBox="0 0 180 360" preserveAspectRatio="none">
-                                            <rect className="slider-border" x="2" y="2" width="176" height="356" fill="none" stroke="#FF6600" strokeWidth="4" />
+                                            <rect className="slider-border" x="2" y="2" width="176" height="356" fill="none" stroke="#FF6600" strokeWidth="4" style={{ visibility: "hidden" }} />
                                         </svg>
                                         <h3 className="slider-caption opacity-0">{slider.slider_caption}</h3>
                                         <h4 className="slider-description opacity-0 text-3xl sm:text-4xl lg:text-5xl mt-10 md:mt-20 xl:whitespace-nowrap sm:min-w-sm md:min-w-md lg:min-w-lg">{slider.slider_description}</h4>
@@ -268,7 +276,7 @@ export default function HomePage({
                             <p className="text-lg md:text-2xl" ref={legacyRef}>Years<br />Of<br />Legacy</p>
                         </div>
                         </Swiper>
-                        <div className="master-slider-pagination absolute !bottom-20 lg:!bottom-25 xl:!bottom-30 !right-10 lg:!right-30 xl:!right-70 z-5 flex items-center gap-3">
+                        <div className="master-slider-pagination absolute !bottom-20 lg:!bottom-25 xl:!bottom-30 !right-10 lg:!right-30 xl:!right-70 z-3 flex items-center gap-3">
                             {sliders.map((_, index) => (
                                 <button
                                     key={index}
