@@ -29,7 +29,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
 
-            gtag('config', 'UA-24069683-13');
+            gtag('config', 'UA-54981765-1');
           `}
         </Script>
       </head>
