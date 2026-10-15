@@ -15,7 +15,7 @@ const playfair = Playfair_Display({
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className={`${poppins.variable} ${playfair.variable} font-poppins font-playfair`}>
+    <html lang="en" className={`${poppins.variable} ${playfair.variable} font-poppins font-playfair scroll-smooth`}>
       <head>
         {/* Google Analytics */}
         <Script

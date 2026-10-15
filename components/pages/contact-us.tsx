@@ -110,7 +110,7 @@ export default function ContactUsPage() {
               if(typeof error_response === "object" && error_response !== null && !Array.isArray(error_response)) {
                 error_response = Object.values(error_response);
 
-                const { path, msg } = error_response[0][0];
+                const [path, msg] = Object.entries(error_response[0])[0];
 
                 const error_message = msg;
                 const error_path = path;
