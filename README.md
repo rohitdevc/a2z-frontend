@@ -83,7 +83,6 @@ FRONTEND_TOKEN_KEY=
 - `BASEPATH_PREFIX` — Optional URL prefix for the application.
 - `ASSET_PREFIX` — Optional prefix for static assets.
 - `API_DOMAIN_NAME` — API domain used by the application.
-- `FRONTEND_TOKEN_KEY` — Token-related configuration consumed by the application.
 
 The appropriate values depend on the deployment environment. Verify the API service modules and deployment configuration before running the application. Do not commit real credentials or sensitive tokens to version control.
 
