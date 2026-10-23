@@ -2,7 +2,7 @@
 
 The frontend application for the official **A2Z Online Services Pvt. Ltd.** website, presenting the company's services, projects, expertise, clients, awards, and corporate information.
 
-- **Live Website:** https://www.a2zonlineservices.com/
+- **Netlify Website:** https://a2z-panchshil.netlify.app/
 - **Repository:** https://github.com/rohitdevc/a2z-frontend
 
 ## Overview
@@ -23,6 +23,7 @@ The frontend is built with Next.js and uses API-driven content for its homepage 
 - **SEO Support** — Dynamic metadata generation and configurable canonical and asset paths.
 - **Responsive Interface** — Components styled with Tailwind CSS.
 - **Interactive UI** — GSAP animations, Swiper sliders, and React icon components.
+- **Netlify Deployment** — Hosted on Netlify with deployment-aware Next.js configuration.
 
 ## Technology Stack
 
