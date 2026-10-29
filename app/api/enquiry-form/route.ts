@@ -1,15 +1,9 @@
 import { NextRequest, NextResponse } from "next/server";
 import { submitEnquiryForm } from "@/lib/enquiry-form";
-import { checkEnquiryRateLimit } from "@/lib/rate-limit";
 
 export const runtime = "nodejs";
 
 export async function POST(req: NextRequest) {
-  const ip = req.headers.get("x-real-ip")?.trim() || req.headers.get("x-forwarded-for")?.split(",")[0]?.trim();
-
-  if (!ip) {
-    return NextResponse.json({ error: "Unable to determine client IP" }, { status: 503 });
-  }
   try {
     const body = await req.json();
 
