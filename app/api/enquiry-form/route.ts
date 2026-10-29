@@ -1,8 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { submitEnquiryForm } from "@/lib/enquiry-form";
 
-export const runtime = "nodejs";
-
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
