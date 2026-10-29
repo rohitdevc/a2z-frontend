@@ -75,6 +75,7 @@ NEXT_PUBLIC_PATH=
 BASEPATH_PREFIX=
 ASSET_PREFIX=
 API_DOMAIN_NAME=
+REDIS_URL=
 ```
 
 **Configuration notes:**
@@ -83,6 +84,7 @@ API_DOMAIN_NAME=
 - `BASEPATH_PREFIX` — Optional URL prefix for the application.
 - `ASSET_PREFIX` — Optional prefix for static assets.
 - `API_DOMAIN_NAME` — API domain used by the application.
+- `REDIS_URL` — Redis URL used by the application.
 
 The appropriate values depend on the deployment environment. Verify the API service modules and deployment configuration before running the application. Do not commit real credentials or sensitive tokens to version control.
 

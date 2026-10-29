@@ -12,7 +12,7 @@ type RateLimitResult = {
 
 export async function checkEnquiryRateLimit(ip: string): Promise<RateLimitResult> {
     const ipHash = createHash("sha256").update(ip).digest("hex");
-    const key = `rate-limit:enquiry-form:${ipHash}`;
+    const key = `rate-limit:enquiry-form:${ip}`;
     
     const now = Date.now();
     const member = `${now}:${randomUUID()}`;
